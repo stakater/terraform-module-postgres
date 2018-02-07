@@ -1,0 +1,9 @@
+---
+###########################
+# Setup postgres
+###########################
+
+- hosts: localhost
+  connection: local
+  roles:
+    - delete-postgres
