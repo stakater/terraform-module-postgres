@@ -17,6 +17,7 @@ module "postgres" {
 
   allowed_security_groups = "${var.allowed_security_groups}"
   database_identifier = "${var.stack_name_prefix}-${var.environment}-${var.database_name}"
+  db_subnet_group = "${var.db_subnet_group}"
 
   database_name = "${var.database_name}"
   database_username = "${var.database_username}"

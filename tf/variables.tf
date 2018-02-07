@@ -22,6 +22,10 @@ variable "allowed_security_groups" {
   default = ""
 }
 
+variable "db_subnet_group" {
+  default = ""
+}
+
 variable "database_name" {
 }
 
