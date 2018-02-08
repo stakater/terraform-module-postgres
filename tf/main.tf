@@ -10,7 +10,7 @@ terraform {
 }
 
 module "postgres" {
-  source = "github.com/stakater/blueprint-storage-aws.git//modules/rds/postgres?ref=rds-postgres"
+  source = "github.com/stakater/blueprint-storage-aws.git//modules/rds/postgres?ref=final-snapshot"
   name = "${var.stack_name_prefix}-${var.environment}-${var.database_name}"
   vpc_id = "${var.vpc_id}"
   vpc_cidr = "${var.vpc_cidr}"
