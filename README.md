@@ -54,7 +54,6 @@ export TF_VAR_s3_bucket="449074299682-stakater-dev-state-store"
 export TF_VAR_database_name="stakater123"
 export TF_VAR_database_username="root"
 export TF_VAR_subnet_ids="subnet-a051b7c6,subnet-a20e2cf9,subnet-ae15e0e6"
-export action="configure.yaml create.yaml"
 ```
 
 3. Run `ansible-playbook configure.yaml create.yaml`
