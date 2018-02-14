@@ -59,6 +59,8 @@ export TF_VAR_subnet_ids="subnet-a051b7c6,subnet-a20e2cf9,subnet-ae15e0e6"
 
 Edit `secrets.sh`, and provide password for database.
 
+_Note: Use secrets.sh only for those secret params that should not be commited to output repo for obvious security concerns. Any other information provided here instead of tfvars.sh would not be recorded anywhere just like passwords should not be_
+
 ```
 echo "export TF_VAR_database_password=securepassword"
 ```
