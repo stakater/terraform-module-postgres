@@ -22,4 +22,5 @@ module "postgres" {
   database_name = "${var.database_name}"
   database_username = "${var.database_username}"
   database_password = "${var.database_password}"
+  skip_final_snapshot = "${var.skip_final_snapshot}"
 }
