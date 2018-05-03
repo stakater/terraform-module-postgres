@@ -16,13 +16,11 @@
       echo "File $VARS_FILE exists."
       . ./$VARS_FILE
       . ./$SECRETS_FILE
-      cat <<EOM > provider.tf
-      provider "aws" {
+      echo "provider \"aws\" {
         assume_role {
-          role_arn = "\${var.role_arn}"
+          role_arn = \"\${var.role_arn}\"
         }
-      }
-      EOM
+      }" > provider.tf
       terraform init -reconfigure -backend=true -get=true -input=false \
       -backend-config="bucket=${TF_VAR_s3_bucket}" \
       -backend-config="key=terraform_states/postgres-${TF_VAR_stack_name_prefix}-${TF_VAR_environment}-${TF_VAR_database_name}/terraform.tfstate" \
