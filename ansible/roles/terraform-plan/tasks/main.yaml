@@ -16,6 +16,7 @@
       echo "File $VARS_FILE exists."
       . ./$VARS_FILE
       . ./$SECRETS_FILE
+      export TF_LOG=DEBUG
       echo "provider \"aws\" {
         region = \"\${var.region}\"
         assume_role {
