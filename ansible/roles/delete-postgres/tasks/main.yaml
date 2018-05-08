@@ -26,8 +26,7 @@
       terraform init -reconfigure -backend=true -get=true -input=false \
       -backend-config="bucket=${TF_VAR_s3_bucket}" \
       -backend-config="key=terraform_states/postgres-${TF_VAR_stack_name_prefix}-${TF_VAR_environment}-${TF_VAR_database_name}/terraform.tfstate" \
-      -backend-config="region=${TF_VAR_region}" \
-      -backend-config="role_arn=${TF_VAR_role_arn}"
+      -backend-config="region=${TF_VAR_region}"
 
       terraform destroy -force > destroy.txt
     else
