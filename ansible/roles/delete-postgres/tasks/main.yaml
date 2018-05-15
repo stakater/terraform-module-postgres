@@ -16,6 +16,13 @@
       echo "File $VARS_FILE exists."
       . ./$VARS_FILE
       . ./$SECRETS_FILE
+      export TF_LOG=DEBUG
+      echo "provider \"aws\" {
+        region = \"\${var.region}\"
+        assume_role {
+          role_arn = \"\${var.role_arn}\"
+        }
+      }" > provider.tf
       terraform init -reconfigure -backend=true -get=true -input=false \
       -backend-config="bucket=${TF_VAR_s3_bucket}" \
       -backend-config="key=terraform_states/postgres-${TF_VAR_stack_name_prefix}-${TF_VAR_environment}-${TF_VAR_database_name}/terraform.tfstate" \
